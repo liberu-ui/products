@@ -27,7 +27,7 @@
     "@enso-ui/measurement-units": "1.1.x",
     "@enso-ui/tables": "1.4.x",
     "@enso-ui/tabs": "^1.0.25",
-    "@enso-ui/ui": "2.4.x",
+    "@enso-ui/ui": "2.5.x",
     "@fortawesome/fontawesome-svg-core": "^1.2.2",
     "@fortawesome/free-brands-svg-icons": "^5.2.0",
     "vue": "^2.5.16"
