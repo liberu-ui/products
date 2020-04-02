@@ -12,6 +12,7 @@
                 </span>
             </label>
             <categories v-model="field.value"
+                @input="errors.clear(field.name); $emit('changed')"
                 ref="categories"/>
             <p class="help is-danger"
                v-if="errors.has(field.name)">
