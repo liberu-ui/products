@@ -4,12 +4,6 @@
         <template v-slot:category_id="{ field, errors }">
             <label class="label">
                 {{ i18n('Category') }}
-                <span class="icon is-small has-text-info"
-                    v-tooltip="i18n(field.meta.tooltip)"
-                    v-if="field.meta.tooltip">
-                    <fa icon="info-circle"
-                        size="xs"/>
-                </span>
             </label>
             <categories v-model="field.value"
                 @input="errors.clear(field.name); $emit('changed')"
