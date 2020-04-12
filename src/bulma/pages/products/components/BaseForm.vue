@@ -1,6 +1,18 @@
 <template>
     <enso-form class="box form-box has-background-light raises-on-hover"
         @ready="form = $event.form">
+        <template v-slot:category_id="{ field, errors }">
+            <label class="label">
+                {{ i18n('Category') }}
+            </label>
+            <categories v-model="field.value"
+                @input="errors.clear(field.name); $emit('changed')"
+                ref="categories"/>
+            <p class="help is-danger"
+               v-if="errors.has(field.name)">
+                {{ errors.get(field.name) }}
+            </p>
+        </template>
         <template v-slot:suppliers>
             <div class="wrapper is-block">
                 <div class="columns">
@@ -23,13 +35,19 @@
 </template>
 
 <script>
+import { VTooltip } from 'v-tooltip';
 import { EnsoForm, FormField } from '@enso-ui/forms/bulma';
+import Categories from '@enso-ui/categories/src/bulma/pages/administration/categories/components/Categories.vue';
 import Supplier from './Supplier.vue';
 
 export default {
     name: 'BaseForm',
 
-    components: { EnsoForm, FormField, Supplier },
+    directives: { tooltip: VTooltip },
+
+    components: {
+        Categories, EnsoForm, FormField, Supplier,
+    },
 
     inject: ['i18n'],
 
