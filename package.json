@@ -23,7 +23,7 @@
   "dependencies": {
     "@enso-ui/accessories": "2.4.x",
     "@enso-ui/categories": "0.0.*",
-    "@enso-ui/directives": "^1.0.11",
+    "@enso-ui/directives": "1.0.11",
     "@enso-ui/forms": "1.4.x",
     "@enso-ui/measurement-units": "1.1.x",
     "@enso-ui/tables": "1.4.x",
