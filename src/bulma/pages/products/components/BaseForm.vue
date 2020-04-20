@@ -5,9 +5,8 @@
             <label class="label">
                 {{ i18n('Category') }}
             </label>
-            <categories v-model="field.value"
-                @input="errors.clear(field.name); $emit('changed')"
-                ref="categories"/>
+            <category-tree v-model="field.value"
+                @input="errors.clear(field.name); $emit('changed')"/>
             <p class="help is-danger"
                v-if="errors.has(field.name)">
                 {{ errors.get(field.name) }}
@@ -37,7 +36,7 @@
 <script>
 import { VTooltip } from 'v-tooltip';
 import { EnsoForm, FormField } from '@enso-ui/forms/bulma';
-import Categories from '@enso-ui/categories/src/bulma/pages/administration/categories/components/Categories.vue';
+import CategoryTree from '@enso-ui/categories';
 import Supplier from './Supplier.vue';
 
 export default {
@@ -46,7 +45,7 @@ export default {
     directives: { tooltip: VTooltip },
 
     components: {
-        Categories, EnsoForm, FormField, Supplier,
+        CategoryTree, EnsoForm, FormField, Supplier,
     },
 
     inject: ['i18n'],
