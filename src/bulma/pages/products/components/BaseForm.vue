@@ -5,7 +5,8 @@
             <label class="label">
                 {{ i18n('Category') }}
             </label>
-            <category-tree v-model="field.value"
+            <category-tree class="box is-shadowless"
+                v-model="field.value"
                 @input="errors.clear(field.name); $emit('changed')"/>
             <p class="help is-danger"
                v-if="errors.has(field.name)">
