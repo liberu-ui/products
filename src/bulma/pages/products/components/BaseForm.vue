@@ -45,6 +45,7 @@
 import { VTooltip } from 'v-tooltip';
 import { EnsoForm, FormField } from '@enso-ui/forms/bulma';
 import CategoryTree from '@enso-ui/categories';
+import Gallery from '../../../components/Gallery.vue';
 import Supplier from './Supplier.vue';
 
 export default {
@@ -53,7 +54,7 @@ export default {
     directives: { tooltip: VTooltip },
 
     components: {
-        CategoryTree, EnsoForm, FormField, Supplier,
+        CategoryTree, EnsoForm, FormField, Gallery, Supplier,
     },
 
     inject: ['i18n'],
