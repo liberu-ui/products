@@ -1,6 +1,13 @@
 <template>
     <enso-form class="box form-box has-background-light raises-on-hover"
         @ready="form = $event.form">
+        <template v-slot:gallery>
+            <label class="label">
+                {{ i18n('Pictures') }}
+            </label>
+            <gallery class="box is-shadowless"
+                :product-id="$route.params.product"/>
+        </template>
         <template v-slot:category_id="{ field, errors }">
             <label class="label">
                 {{ i18n('Category') }}
