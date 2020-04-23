@@ -31,7 +31,8 @@
     "@enso-ui/ui": "2.5.x",
     "@fortawesome/fontawesome-svg-core": "^1.2.2",
     "@fortawesome/free-brands-svg-icons": "^5.2.0",
-    "vue": "^2.5.16"
+    "vue": "^2.5.16",
+    "vue-advanced-cropper": "^0.16.1"
   },
   "devDependencies": {
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
