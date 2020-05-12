@@ -1,6 +1,13 @@
 <template>
     <enso-table class="box is-paddingless raises-on-hover"
-        id="products"/>
+        id="products">
+        <template v-slot:pictureUrl="{ row }">
+            <figure class="image product-image is-48x48 has-vertically-centered-content">
+                <img :src="row.pictureUrl"
+                     alt="cover">
+            </figure>
+        </template>
+    </enso-table>
 </template>
 
 <script>
@@ -12,3 +19,18 @@ export default {
     components: { EnsoTable },
 };
 </script>
+
+<style lang="scss">
+    .image.product-image.is-48x48 {
+        width: 48px;
+        height: 48px;
+
+        img {
+            margin: auto;
+            width: auto;
+            height: auto;
+            max-width: 48px;
+            max-height: 48px;
+        }
+    }
+</style>
