@@ -3,8 +3,9 @@
         id="products">
         <template v-slot:pictureUrl="{ row }">
             <figure class="image product-image is-48x48 has-vertically-centered-content">
-                <img :src="row.pictureUrl"
-                     alt="cover">
+                <a :href="row.pictureUrl" target="_blank">
+                    <img :src="row.pictureUrl" alt="cover">
+                </a>
             </figure>
         </template>
     </enso-table>
