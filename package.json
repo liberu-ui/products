@@ -1,6 +1,6 @@
 {
   "name": "@enso-ui/products",
-  "version": "1.4.9",
+  "version": "1.4.10",
   "description": "Basic products package",
   "main": "src/bulma/routes/products.js",
   "scripts": {
