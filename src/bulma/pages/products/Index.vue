@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style lang="scss">
-    .image.product-image.is-48x48 {
+    .image.product-image.is-48x48 > a {
         width: 48px;
         height: 48px;
 
