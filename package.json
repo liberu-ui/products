@@ -28,6 +28,7 @@
     "@enso-ui/documents": "^1.0",
     "@enso-ui/forms": "^2.0",
     "@enso-ui/measurement-units": "^2.0",
+    "@enso-ui/packaging-units": "^1.0",
     "@enso-ui/tables": "^2.0",
     "@enso-ui/tabs": "^1.0",
     "@enso-ui/ui": "^3.0",
