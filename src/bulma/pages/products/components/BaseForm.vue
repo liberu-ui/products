@@ -12,7 +12,8 @@
             <label class="label">
                 {{ i18n('Category') }}
             </label>
-            <category-tree class="box is-shadowless"
+            <tree class="box is-shadowless"
+                route-group="administration.categories"
                 v-model="field.value"
                 @input="errors.clear(field.name); $emit('changed')"/>
             <p class="help is-danger"
@@ -44,7 +45,7 @@
 <script>
 import { VTooltip } from 'v-tooltip';
 import { EnsoForm, FormField } from '@enso-ui/forms/bulma';
-import CategoryTree from '@enso-ui/categories';
+import Tree from '@enso-ui/orderable-trees/bulma';
 import Gallery from '../../../components/Gallery.vue';
 import Supplier from './Supplier.vue';
 
@@ -54,7 +55,7 @@ export default {
     directives: { tooltip: VTooltip },
 
     components: {
-        CategoryTree, EnsoForm, FormField, Gallery, Supplier,
+        Tree, EnsoForm, FormField, Gallery, Supplier,
     },
 
     inject: ['i18n'],
