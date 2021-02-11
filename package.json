@@ -27,6 +27,7 @@
     "@enso-ui/directives": "^1.0",
     "@enso-ui/forms": "^2.0",
     "@enso-ui/measurement-units": "^3.0",
+    "@enso-ui/orderable-trees": "^1.0.0",
     "@enso-ui/packaging-units": "^2.0",
     "@enso-ui/tables": "^2.0",
     "@enso-ui/tabs": "^1.0",
