@@ -68,10 +68,19 @@ export default {
                 outline: 1px dashed;
                 padding: 0.2em;
                 cursor: pointer;
+                margin: 0.75rem;
 
                 &.is-192x192 {
                     height: 192px;
                     width: 192px;
+                }
+
+                img {
+                    max-height: 100%;
+                    max-width: 100%;
+                    margin: auto;
+                    width: auto;
+                    height: auto;
                 }
 
                 overflow:hidden;
