@@ -17,7 +17,7 @@
                 v-model="field.value"
                 @input="errors.clear(field.name); $emit('changed')"/>
             <p class="help is-danger"
-               v-if="errors.has(field.name)">
+                v-if="errors.has(field.name)">
                 {{ errors.get(field.name) }}
             </p>
         </template>
@@ -26,14 +26,14 @@
                 <div class="columns">
                     <div class="column is-6-tablet">
                         <form-field :field="form.field('suppliers')"
-                            @input="prefill"/>
+                            :custom-params="$route.params"/>
                     </div>
                     <div class="column is-6-tablet">
                         <form-field :field="form.field('defaultSupplierId')"
                             :params="selectedSuppliers"/>
                     </div>
                 </div>
-                <supplier v-for="supplier in suppliers"
+                <supplier v-for="supplier in form.field('suppliers').value"
                     :key="supplier.id"
                     :supplier="supplier"
                     v-on="$listeners"/>
@@ -65,24 +65,12 @@ export default {
     }),
 
     computed: {
-        suppliers() {
-            return this.form ? this.form.field('suppliers').value : [];
-        },
         selectedSuppliers() {
             return {
-                id: this.suppliers.map(({ id }) => id),
+                id: this.form
+                    ? this.form.field('suppliers').value.map(({ id }) => id)
+                    : [],
             };
-        },
-        partNumber() {
-            return this.form && this.form.field('part_number').value;
-        },
-    },
-
-    methods: {
-        prefill() {
-            this.suppliers
-                .filter(({ pivot }) => !pivot.part_number)
-                .forEach(({ pivot }) => { pivot.part_number = this.partNumber; });
         },
     },
 };
