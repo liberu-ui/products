@@ -2,11 +2,13 @@
     <enso-table class="box is-paddingless raises-on-hover"
         id="products">
         <template v-slot:pictureUrl="{ row }">
-            <figure class="image product-image is-48x48 has-vertically-centered-content">
-                <a :href="row.pictureUrl" target="_blank">
-                    <img :src="row.pictureUrl" alt="cover">
-                </a>
-            </figure>
+            <a :href="row.pictureUrl" target="_blank">
+                <figure class="image is-48x48 is-flex
+                    is-align-content-center is-justify-content-center">
+                    <img class="product-image"
+                        :src="row.pictureUrl" alt="cover">
+                </figure>
+            </a>
         </template>
     </enso-table>
 </template>
@@ -22,16 +24,12 @@ export default {
 </script>
 
 <style lang="scss">
-    .image.product-image.is-48x48 > a {
-        width: 48px;
-        height: 48px;
-
-        img {
-            margin: auto;
-            width: auto;
-            height: auto;
-            max-width: 48px;
-            max-height: 48px;
-        }
+.image.is-48x48 {
+    .product-image {
+        width: auto;
+        height: auto;
+        max-width: 48px;
+        max-height: 48px;
     }
+}
 </style>

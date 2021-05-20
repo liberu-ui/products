@@ -1,5 +1,5 @@
 <template>
-    <figure class="image is-192x192"
+    <figure class="image is-192x192 is-flex is-align-content-center is-justify-content-center"
         @mouseenter="controls = true"
         @mouseleave="controls = false">
         <img :src="route('core.files.show', picture.file.id)">
@@ -64,47 +64,37 @@ export default {
 <style lang="scss">
     .pictures {
         .gallery {
-            figure {
+            .image.is-192x192 {
                 outline: 1px dashed;
                 padding: 0.2em;
                 cursor: pointer;
                 margin: 0.75rem;
-
-                &.is-192x192 {
-                    height: 192px;
-                    width: 192px;
-                }
+                height: 192px;
+                width: 192px;
 
                 img {
-                    max-height: 100%;
-                    max-width: 100%;
-                    margin: auto;
-                    width: auto;
-                    height: auto;
+                    object-fit: contain;
                 }
-
-                overflow:hidden;
 
                 .controls {
                     position: absolute;
                     bottom: 3px;
                     margin: -0.2em;
                     width: 100%;
-                }
-
-                .level-left {
-                    flex: 1;
-                    min-width: 0;
-
-                    .level-item {
+                    .level-left {
                         flex: 1;
                         min-width: 0;
-                        justify-content: flex-start;
 
-                        .filename {
-                            white-space: nowrap;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
+                        .level-item {
+                            flex: 1;
+                            min-width: 0;
+                            justify-content: flex-start;
+
+                            .filename {
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                            }
                         }
                     }
                 }
