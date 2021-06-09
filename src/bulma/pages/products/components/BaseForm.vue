@@ -43,16 +43,14 @@
 </template>
 
 <script>
-import { VTooltip } from 'v-tooltip';
 import { EnsoForm, FormField } from '@enso-ui/forms/bulma';
 import Tree from '@enso-ui/orderable-trees/bulma';
+import { slug } from '@enso-ui/strings';
 import Gallery from '../../../components/Gallery.vue';
 import Supplier from './Supplier.vue';
 
 export default {
     name: 'BaseForm',
-
-    directives: { tooltip: VTooltip },
 
     components: {
         Tree, EnsoForm, FormField, Gallery, Supplier,
@@ -65,12 +63,21 @@ export default {
     }),
 
     computed: {
+        name() {
+            return this.form?.field('name').value;
+        },
         selectedSuppliers() {
             return {
                 id: this.form
                     ? this.form.field('suppliers').value.map(({ id }) => id)
                     : [],
             };
+        },
+    },
+
+    watch: {
+        name(name) {
+            this.form.field('slug').value = slug(name);
         },
     },
 };
