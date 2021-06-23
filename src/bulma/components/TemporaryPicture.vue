@@ -6,7 +6,7 @@
             {{ i18n('preview') }}
         </span>
         <img :src="file.src">
-        <div class="controls has-background-light animated fadeIn has-padding-small"
+        <div class="controls has-background-light animated fadeIn p-1"
             v-if="controls || confirmation">
             <div class="level">
                 <div class="level-left">

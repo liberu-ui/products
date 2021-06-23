@@ -3,7 +3,7 @@
         @mouseenter="controls = true"
         @mouseleave="controls = false">
         <img :src="route('core.files.show', picture.file.id)">
-        <div class="controls has-background-light animated fadeIn has-padding-small"
+        <div class="controls has-background-light animated fadeIn p-1"
             v-if="controls || confirmation">
             <div class="level">
                 <div class="level-left">
