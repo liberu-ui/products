@@ -77,9 +77,7 @@ export default {
 
     watch: {
         name(name) {
-            this.form.field('slug').value = name
-                ? slug(name)
-                : null;
+            this.form.field('slug').value = slug(name);
         },
     },
 };
