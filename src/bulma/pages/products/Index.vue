@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="columns is-centered is-multiline"
-             v-if="ready">
+            v-if="ready">
             <div class="column is-narrow">
                 <boolean-filter class="box raises-on-hover"
                     :name="i18n('Bundle')"
@@ -13,13 +13,23 @@
                     default="lastMonth"
                     v-model="params.dateInterval"
                     @update="
-                        intervals.products.updated_at.min = $event.min;
-                        intervals.products.updated_at.max = $event.max;
+                        intervals.products.date.min = $event.min;
+                        intervals.products.date.max = $event.max;
                     "/>
+            </div>
+            <div class="column is-narrow">
+                <enso-filter class="box raises-on-hover"
+                    v-model="dateFilter"
+                    hide-off
+                    :options="dateFilters"
+                    :name="i18n('Date Filter')"/>
             </div>
         </div>
         <enso-table class="box is-paddingless raises-on-hover"
-            id="products">
+            ref="products"
+            id="products"
+            :intervals="tableIntervals"
+            :filters="filters">
             <template v-slot:pictureUrl="{ row }">
                 <a :href="row.pictureUrl" target="_blank">
                     <figure class="image is-48x48 is-flex
@@ -56,7 +66,7 @@ export default {
     },
 
     data: () => ({
-        apiVersion: 1.6,
+        apiVersion: 1.7,
 
         filters: {
             products: {
@@ -66,7 +76,7 @@ export default {
 
         intervals: {
             products: {
-                updated_at: {
+                date: {
                     dateFormat: null,
                     max: null,
                     min: null,
@@ -78,8 +88,28 @@ export default {
             dateInterval: 'all',
         },
 
+        dateFilters: [
+            { label: 'Created', value: 'created_at' },
+            { label: 'Updated', value: 'updated_at' },
+        ],
+        dateFilter: 'date',
         ready: false,
     }),
+
+    computed: {
+        ...mapState(['meta', 'enums']),
+        tableIntervals() {
+            return {
+                products: {
+                    [this.dateFilter]: {
+                        min: this.intervals.products.date.min,
+                        max: this.intervals.products.date.max,
+                        dateFormat: null,
+                    },
+                },
+            };
+        },
+    },
 };
 </script>
 
