@@ -30,11 +30,19 @@
                 </a>
             </template>
         </enso-table>
+        <filter-state :api-version="apiVersion"
+            name="product_filters"
+            :filters="filters"
+            :intervals="intervals"
+            :params="params"
+            @ready="ready = true"
+            ref="filterState"/>
     </div>
 </template>
 
 <script>
 import { BooleanFilter, EnsoDateFilter } from '@enso-ui/filters/bulma';
+import { FilterState } from '@enso-ui/filters/renderless';
 import { EnsoTable } from '@enso-ui/tables/bulma';
 
 export default {
@@ -44,6 +52,7 @@ export default {
         BooleanFilter,
         EnsoDateFilter,
         EnsoTable,
+        FilterState,
     },
 
     data: () => ({
