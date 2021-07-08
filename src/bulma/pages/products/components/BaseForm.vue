@@ -39,6 +39,18 @@
                     v-on="$listeners"/>
             </div>
         </template>
+        <template v-slot:bundle>
+            <div class="wrapper is-block">
+                <div class="columns">
+                    <div class="column is-12">
+                        <form-field :field="form.field('bundledProducts')"/>
+                    </div>
+                </div>
+                <bundle v-for="product in form.field('bundledProducts').value"
+                    :key="product.id"
+                    :product="product"/>
+            </div>
+        </template>
     </enso-form>
 </template>
 
@@ -48,12 +60,13 @@ import Tree from '@enso-ui/orderable-trees/bulma';
 import { slug } from '@enso-ui/strings';
 import Gallery from '../../../components/Gallery.vue';
 import Supplier from './Supplier.vue';
+import Bundle from './Bundle.vue';
 
 export default {
     name: 'BaseForm',
 
     components: {
-        Tree, EnsoForm, FormField, Gallery, Supplier,
+        Bundle, Tree, EnsoForm, FormField, Gallery, Supplier,
     },
 
     inject: ['i18n'],
@@ -65,6 +78,9 @@ export default {
     computed: {
         name() {
             return this.form?.field('name').value;
+        },
+        isBundle() {
+            return this.form?.field('is_bundle').value;
         },
         selectedSuppliers() {
             return {
@@ -78,6 +94,13 @@ export default {
     watch: {
         name(name) {
             this.form.field('slug').value = slug(name);
+        },
+        isBundle(value) {
+            if (value) {
+                this.form.showTab('Bundle');
+            } else {
+                this.form.hideTab('Bundle');
+            }
         },
     },
 };

@@ -9,8 +9,8 @@
             </div>
             <div class="column is-narrow">
                 <enso-date-filter class="box raises-on-hover"
-                    :name="i18n('Updated')"
-                    default="lastMonth"
+                    :name="i18n('Date')"
+                    default="thisMonth"
                     v-model="params.dateInterval"
                     @update="
                         intervals.products.date.min = $event.min;
@@ -85,14 +85,14 @@ export default {
         },
 
         params: {
-            dateInterval: 'all',
+            dateInterval: 'thisMonth',
         },
 
         dateFilters: [
             { label: 'Created', value: 'created_at' },
             { label: 'Updated', value: 'updated_at' },
         ],
-        dateFilter: 'date',
+        dateFilter: 'created_at',
         ready: false,
     }),
 
