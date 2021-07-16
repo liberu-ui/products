@@ -39,7 +39,7 @@ export default {
     name: 'Edit',
 
     components: {
-        BaseForm, Accessories, Tab, Documents, Comments,
+        Accessories, BaseForm, Comments, Documents, Tab,
     },
 
     computed: {

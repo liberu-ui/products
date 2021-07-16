@@ -24,40 +24,14 @@
                 </div>
             </div>
         </div>
-        <div class="column is-1">
-            <div class="field">
-                <label class="label">
-                    {{ i18n('Quantity') }}
-                </label>
-                <div class="control">
-                    <input class="input"
-                        readonly
-                        v-model="product.pivot.quantity"
-                        v-focus
-                        v-select-on-focus>
-                </div>
-            </div>
-        </div>
         <div class="column is-narrow">
             <div class="field">
                 <label class="label">
-                    {{ i18n('Mapped At') }}
+                    {{ i18n('Stock') }}
                 </label>
                 <div class="control">
                     <input class="input timestamp"
-                        :value="product.pivot.createdAt"
-                        readonly>
-                </div>
-            </div>
-        </div>
-        <div class="column is-narrow">
-            <div class="field">
-                <label class="label">
-                    {{ i18n('Updated At') }}
-                </label>
-                <div class="control">
-                    <input class="input timestamp"
-                        :value="product.pivot.updatedAt"
+                        :value="product.stock"
                         readonly>
                 </div>
             </div>

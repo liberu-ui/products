@@ -43,7 +43,8 @@
             <div class="wrapper is-block">
                 <div class="columns">
                     <div class="column is-12">
-                        <form-field :field="form.field('bundledProducts')"/>
+                        <form-field :field="form.field('bundledProducts')"
+                            @changed="isBundleMeta"/>
                     </div>
                 </div>
                 <bundle v-for="product in form.field('bundledProducts').value"
@@ -101,6 +102,13 @@ export default {
             } else {
                 this.form.hideTab('Bundle');
             }
+        },
+    },
+
+    methods: {
+        isBundleMeta() {
+            this.form.field('is_bundle').meta
+                .readonly = !!this.form.field('bundledProducts').value.length;
         },
     },
 };

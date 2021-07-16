@@ -12,10 +12,7 @@
                     :name="i18n('Date')"
                     default="thisMonth"
                     v-model="params.dateInterval"
-                    @update="
-                        intervals.products.date.min = $event.min;
-                        intervals.products.date.max = $event.max;
-                    "/>
+                    :interval="intervals.products.date"/>
             </div>
             <div class="column is-narrow">
                 <enso-filter class="box raises-on-hover"
@@ -29,7 +26,8 @@
             ref="products"
             id="products"
             :intervals="tableIntervals"
-            :filters="filters">
+            :filters="filters"
+            :params="params">
             <template v-slot:pictureUrl="{ row }">
                 <a :href="row.pictureUrl" target="_blank">
                     <figure class="image is-48x48 is-flex
@@ -38,6 +36,15 @@
                             :src="row.pictureUrl" alt="cover">
                     </figure>
                 </a>
+            <template v-slot:packBundle="{ row }">
+                <pack :bundle="row"
+                    :key="`pack-${row.id}`"
+                    @success="$refs.products.fetch()"/>
+            </template>
+            <template v-slot:unpackBundle="{ row }">
+                <unpack :bundle="row"
+                    :key="`unpack-${row.id}`"
+                    @success="$refs.products.fetch()"/>
             </template>
         </enso-table>
         <filter-state :api-version="apiVersion"
@@ -54,6 +61,8 @@
 import { BooleanFilter, EnsoDateFilter } from '@enso-ui/filters/bulma';
 import { FilterState } from '@enso-ui/filters/renderless';
 import { EnsoTable } from '@enso-ui/tables/bulma';
+import Pack from './components/Pack.vue';
+import Unpack from './components/Unpack.vue';
 
 export default {
     name: 'Index',
@@ -63,6 +72,8 @@ export default {
         EnsoDateFilter,
         EnsoTable,
         FilterState,
+        Pack,
+        Unpack,
     },
 
     data: () => ({
