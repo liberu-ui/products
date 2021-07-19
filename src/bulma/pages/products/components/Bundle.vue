@@ -24,13 +24,14 @@
                 </div>
             </div>
         </div>
-        <div class="column is-narrow">
+        <div class="column is-2"
+            v-if="product.stock !== null">
             <div class="field">
                 <label class="label">
                     {{ i18n('Stock') }}
                 </label>
                 <div class="control">
-                    <input class="input timestamp"
+                    <input class="input"
                         :value="product.stock"
                         readonly>
                 </div>
@@ -57,9 +58,3 @@ export default {
     },
 };
 </script>
-
-<style lang="scss">
-.product-wrapper .timestamp {
-    width: 7em;
-}
-</style>

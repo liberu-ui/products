@@ -27,7 +27,8 @@
             id="products"
             :intervals="tableIntervals"
             :filters="filters"
-            :params="params">
+            :params="params"
+            @reset="$refs.filterState.reset()">
             <template v-slot:pictureUrl="{ row }">
                 <a :href="row.pictureUrl" target="_blank">
                     <figure class="image is-48x48 is-flex
@@ -61,8 +62,8 @@
 import { BooleanFilter, EnsoDateFilter } from '@enso-ui/filters/bulma';
 import { FilterState } from '@enso-ui/filters/renderless';
 import { EnsoTable } from '@enso-ui/tables/bulma';
-import Pack from './components/Pack.vue';
-import Unpack from './components/Unpack.vue';
+import Pack from './Pack.vue';
+import Unpack from './Unpack.vue';
 
 export default {
     name: 'Index',
@@ -75,6 +76,8 @@ export default {
         Pack,
         Unpack,
     },
+
+    inject: ['route'],
 
     data: () => ({
         apiVersion: 1.7,
