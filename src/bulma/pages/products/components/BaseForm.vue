@@ -43,9 +43,9 @@
 </template>
 
 <script>
-import { EnsoForm, FormField } from '@enso-ui/forms/bulma';
-import Tree from '@enso-ui/orderable-trees/bulma';
-import { slug } from '@enso-ui/strings';
+import { EnsoForm, FormField } from '@liberu-ui/forms/bulma';
+import Tree from '@liberu-ui/orderable-trees/bulma';
+import { slug } from '@liberu-ui/strings';
 import Gallery from '../../../components/Gallery.vue';
 import Supplier from './Supplier.vue';
 

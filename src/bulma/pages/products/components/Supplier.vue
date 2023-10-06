@@ -80,7 +80,7 @@
 </template>
 
 <script>
-import { focus, selectOnFocus } from '@enso-ui/directives';
+import { focus, selectOnFocus } from '@liberu-ui/directives';
 
 export default {
     name: 'Supplier',

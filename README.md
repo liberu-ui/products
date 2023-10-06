@@ -1,10 +1,10 @@
 # Products
 
-![npm license](https://img.shields.io/npm/l/@enso-ui/products.svg) 
-![npm download](https://img.shields.io/npm/dm/@enso-ui/products.svg) 
-![GitHub top language](https://img.shields.io/github/languages/top/enso-ui/products.svg) 
-![GitHub issues](https://img.shields.io/github/issues/enso-ui/products.svg) 
-![npm version](https://img.shields.io/npm/v/@enso-ui/products.svg) 
+![npm license](https://img.shields.io/npm/l/@liberu-ui/products.svg) 
+![npm download](https://img.shields.io/npm/dm/@liberu-ui/products.svg) 
+![GitHub top language](https://img.shields.io/github/languages/top/liberu-ui/products.svg) 
+![GitHub issues](https://img.shields.io/github/issues/liberu-ui/products.svg) 
+![npm version](https://img.shields.io/npm/v/@liberu-ui/products.svg) 
 
 Products package front-end
 

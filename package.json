@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/enso-ui/products.git"
+    "url": "git+https://github.com/liberu-ui/products.git"
   },
   "keywords": [
     "products",
@@ -17,9 +17,9 @@
   "author": "adrian ocneanu <aocneanu@gmail.com>",
   "license": "isc",
   "bugs": {
-    "url": "https://github.com/enso-ui/products/issues"
+    "url": "https://github.com/liberu-ui/products/issues"
   },
-  "homepage": "https://github.com/enso-ui/products#readme",
+  "homepage": "https://github.com/liberu-ui/products#readme",
   "dependencies": {
     "@liberu-ui/bulma": "^4.0",
     "@liberu-ui/categories": "^2.0",

@@ -34,7 +34,7 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { VTooltip } from 'v-tooltip';
-import Confirmation from '@enso-ui/confirmation/bulma';
+import Confirmation from '@liberu-ui/confirmation/bulma';
 
 library.add(faTrashAlt);
 

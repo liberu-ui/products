@@ -45,7 +45,7 @@
 
 <script>
 import { Cropper } from 'vue-advanced-cropper';
-import { EnsoUploader } from '@enso-ui/uploader/bulma';
+import { EnsoUploader } from '@liberu-ui/uploader/bulma';
 import Draggable from 'vuedraggable';
 import StoredPicture from './StoredPicture.vue';
 import TemporaryPicture from './TemporaryPicture.vue';
