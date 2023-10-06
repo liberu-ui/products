@@ -31,8 +31,8 @@
 </template>
 
 <script>
-import { Accessories, Documents, Comments } from '@enso-ui/bulma';
-import { Tab } from '@enso-ui/tabs/bulma';
+import { Accessories, Documents, Comments } from '@liberu-ui/bulma';
+import { Tab } from '@liberu-ui/tabs/bulma';
 import BaseForm from './components/BaseForm.vue';
 
 export default {
