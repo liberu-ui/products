@@ -2,7 +2,7 @@
   "name": "@liberu-ui/products",
   "version": "3.0.17",
   "description": "basic products package",
-  "main": "src/bulma/routes/products.js",
+  "main": "src/bulma/routes/products.ts",
   "scripts": {
     "test": "echo \"error: no test specified\" && exit 1"
   },
