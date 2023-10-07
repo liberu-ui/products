@@ -1,6 +1,6 @@
 {
   "name": "@liberu-ui/products",
-  "version": "3.0.17",
+  "version": "3.0.18",
   "description": "basic products package",
   "main": "src/bulma/routes/products.ts",
   "scripts": {
